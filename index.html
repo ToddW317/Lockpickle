@@ -1,67 +1,83 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lockpickle</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
-<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
-</head>
-</head>
-<body>
-    
-    <h1>Lockpickle</h1>
-    <h3>Attempts left: <span id="attempts"></span></h3>
-    <div id="feedback-container"></div> <!-- Previous guesses will appear here -->
-    <div id="input-area">
-        <input type="text" maxlength="1" class="input-box">
-        <input type="text" maxlength="1" class="input-box">
-        <input type="text" maxlength="1" class="input-box">
-        <input type="text" maxlength="1" class="input-box">
-    </div>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Lockpickle</title>
+        <link rel="stylesheet" href="style.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+        <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+    </head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-L9RNFB2NF5"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
 
-<div class="keyboard-container">
-    <div class="keyboard">
-        <div class="keyboard-row">
-            <!-- Keys 0 to 4 -->
-        <button class="key" onclick="keyPress('0')">0</button>
-        <button class="key" onclick="keyPress('1')">1</button>
-        <button class="key" onclick="keyPress('2')">2</button>
-        <button class="key" onclick="keyPress('3')">3</button>
-        <button class="key" onclick="keyPress('4')">4</button>
+        gtag('config', 'G-L9RNFB2NF5');
+    </script>
+    <body>
+
+        <h1>Lockpickle</h1>
+        <h3>Attempts left: <span id="attempts"></span></h3>
+        <div id="feedback-container"></div>
+        <!-- Previous guesses will appear here -->
+        <div id="input-area">
+            <input type="text" maxlength="1" class="input-box">
+            <input type="text" maxlength="1" class="input-box">
+            <input type="text" maxlength="1" class="input-box">
+            <input type="text" maxlength="1" class="input-box">
         </div>
-        <div class="keyboard-row">
-            <!-- Keys 5 to 9 -->
-        <button class="key" onclick="keyPress('5')">5</button>
-        <button class="key" onclick="keyPress('6')">6</button>
-        <button class="key" onclick="keyPress('7')">7</button>
-        <button class="key" onclick="keyPress('8')">8</button>
-        <button class="key" onclick="keyPress('9')">9</button>
+
+        <div class="keyboard-container">
+            <div class="keyboard">
+                <div class="keyboard-row">
+                    <!-- Keys 0 to 4 -->
+                    <button class="key" onclick="keyPress('0')">0</button>
+                    <button class="key" onclick="keyPress('1')">1</button>
+                    <button class="key" onclick="keyPress('2')">2</button>
+                    <button class="key" onclick="keyPress('3')">3</button>
+                    <button class="key" onclick="keyPress('4')">4</button>
+                </div>
+                <div class="keyboard-row">
+                    <!-- Keys 5 to 9 -->
+                    <button class="key" onclick="keyPress('5')">5</button>
+                    <button class="key" onclick="keyPress('6')">6</button>
+                    <button class="key" onclick="keyPress('7')">7</button>
+                    <button class="key" onclick="keyPress('8')">8</button>
+                    <button class="key" onclick="keyPress('9')">9</button>
+                </div>
+            </div>
+            <div class="action-buttons">
+                <button class="delete-button" onclick="deleteLastInput()">Delete</button>
+                <button class="guess-button" onclick="makeGuess()">Guess</button>
+            </div>
         </div>
-    </div>
-    <div class="action-buttons">
-        <button class="delete-button" onclick="deleteLastInput()">Delete</button>
-        <button class="guess-button" onclick="makeGuess()">Guess</button>
-    </div>
-</div>
 
-<h3>Instructions:</h3>
-<p>Welcome to LockPickle! Your goal is to guess the correct 4-digit code.</p>
-<p>A green box means that the number is correct and in the correct position.</p>
-<p><span><img src="Instructions/Green.png"></span></p>
-<p>A yellow box means that the number is correct but in the wrong position.</p>
-<p><span><img src="Instructions/Yellow.png"></span></p>
-<p>A red box means that the number is incorrect.</p>
-<p><span><img src="Instructions/Red.png"></span></p>
-<p>A blue box means that there are 2 or more of that number in the code but in the wrong positions.</p>
-<p><span><img src="Instructions/Blue.png"></span></p>
-<p>A blue/green gradient box means that there are 2 or more of that number in the code and one of them is already in the correct position.</p>
-<p><span><img src="Instructions/Gradient.png"></span></p>
-<p>You can make up to 5 attempts. The color-coded hints will help you find the code. Good luck!</p>
+        <h3>Instructions:</h3>
+        <p>Welcome to LockPickle! Your goal is to guess the correct 4-digit code.</p>
+        <p>A green box means that the number is correct and in the correct position.</p>
+        <p>
+            <span><img src="Instructions/Green.png"></span></p>
+        <p>A yellow box means that the number is correct but in the wrong position.</p>
+        <p>
+            <span><img src="Instructions/Yellow.png"></span></p>
+        <p>A red box means that the number is incorrect.</p>
+        <p>
+            <span><img src="Instructions/Red.png"></span></p>
+        <p>A blue box means that there are 2 or more of that number in the code but in the wrong positions.</p>
+        <p>
+            <span><img src="Instructions/Blue.png"></span></p>
+        <p>A blue/green gradient box means that there are 2 or more of that number in the code and one of them is already in the correct position.</p>
+        <p>
+            <span><img src="Instructions/Gradient.png"></span></p>
+        <p>You can make up to 5 attempts. The color-coded hints will help you find the code. Good luck!</p>
 
-    <script src="game.js"></script>
-</body>
+        <script src="game.js"></script>
+    </body>
 </html>
