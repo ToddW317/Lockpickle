@@ -1,0 +1,110 @@
+/* Game -> JavaScript -> CSS */
+
+body {
+    background-color: #1b1b1b;
+    font-family: 'Roboto', sans-serif;
+}
+
+h1, h3, p {
+    text-align: center;
+    color: white;
+}
+
+.feedback-row,
+#input-area {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.feedback-box,
+.input-box {
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    line-height: 40px;
+    border: 2px solid #000;
+    font-size: 20px;
+    margin-right: 5px;
+    background-color: #3a3a3c;
+    border-radius: 25%;
+}
+
+.input-box {
+    border: 2px solid #000;
+}
+
+.feedback-box {
+    background-color: red;
+}
+
+.feedback-box,
+.input-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.duplicate-correct {
+    background-image: linear-gradient(to bottom left, green, blue);
+    color: white; /* Adjust text color if needed */
+}
+
+.keyboard-container {
+    display: flex;
+    justify-content: center;
+}
+
+.keyboard {
+    display: flex;
+    flex-direction: column;
+}
+
+.keyboard-row {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 5px; /* You can adjust the spacing between rows here */
+}
+
+.key {
+    width: 40px;
+    height: 40px;
+    font-size: 20px;
+    text-align: center;
+    border: 2px solid #000;
+    cursor: pointer;
+    margin: 0 5px; /* Adjust the spacing between keys here */
+    border-radius: 25%;
+}
+
+.action-buttons {
+    display: flex;
+    flex-direction: column;
+}
+
+.delete-button,
+.guess-button {
+    width: 90px; /* Double the width of a key */
+    height: 40px; /* Height of a key */
+    font-size: 20px;
+    cursor: pointer;
+    border: 1px solid #333;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 10px; /* Space between the keyboard and the buttons */
+    margin-bottom: 5px; /* Space between the buttons */
+}
+
+#instructionsButton {
+    display: block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    font-size: 18px;
+    cursor: pointer;
+    border: 1px solid #333;
+}
+
+
+  
