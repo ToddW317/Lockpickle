@@ -207,7 +207,6 @@ h1, h2, h3, p {
     padding: 20px;
     border: 2px solid #888;
     width: 80%;
-    border-radius: 25%;
   }
   
   .modal-close {

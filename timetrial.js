@@ -256,68 +256,68 @@ function keyPress(digit) {
     }
 }
 
-// document.getElementById("play-again-btn").addEventListener("click", function() {
-//     restartGame();
-//     closeModal();
-//   });
+ document.getElementById("play-again-btn").addEventListener("click", function() {
+     restartGame();
+     closeModal();
+   });
   
-//   document.querySelector(".modal-close").addEventListener("click", closeModal);
+   document.querySelector(".modal-close").addEventListener("click", closeModal);
   
-//   function showModal() {
-//     document.getElementById('modal').style.display = "block";
-//   }
+   function showModal() {
+     document.getElementById('modal').style.display = "block";
+   }
   
-//   function closeModal() {
-//     document.getElementById('modal').style.display = "none";
-//   }
+   function closeModal() {
+     document.getElementById('modal').style.display = "none";
+   }
   
-//   function restartGame() {
-//   // Reset any game variables, scores, timers, etc.
-//   attempts = 0;
-//   correctCodes = 0;
-//   timerStarted = false;
-//   code = generateCode();
-//   console.log(code);
+   function restartGame() {
+   // Reset any game variables, scores, timers, etc.
+   attempts = 0;
+   correctCodes = 0;
+   timerStarted = false;
+   code = generateCode();
+   console.log(code);
 
-//   // Reset the display
-//   document.getElementById('timer').textContent = 60;
-//   document.getElementById('attempts').textContent = 0;
-//   document.getElementById('correct-codes-display').textContent = 0;
+   // Reset the display
+   document.getElementById('timer').textContent = 60;
+   document.getElementById('attempts').textContent = 0;
+   document.getElementById('correct-codes-display').textContent = 0;
 
-//   // Clear the feedback container
-//   document.getElementById('feedback-container').innerHTML = '';
-//   document.getElementById('snapshots-container').innerHTML = '';
+   // Clear the feedback container
+   document.getElementById('feedback-container').innerHTML = '';
+   document.getElementById('snapshots-container').innerHTML = '';
 
-//   // Reset input boxes
-//   resetInputBoxes();
+  // Reset input boxes
+   resetInputBoxes();
 
-//   // Enable keys again
-//   resetKeys();
+   // Enable keys again
+   resetKeys();
 
-//   // Hide the modal
-//   document.getElementById('modal').style.display = 'none';
-// }
+   // Hide the modal
+   document.getElementById('modal').style.display = 'none';
+ }
 
-// document.getElementById('play-again-btn').addEventListener('click', restartGame);
+ document.getElementById('play-again-btn').addEventListener('click', restartGame);
   
-//   // When the game ends, call the showModal function
-//   function gameOver() {
-//     // Populate score
-//     document.getElementById('modal-score').textContent = 'Score: ' + correctCodes;
+   // When the game ends, call the showModal function
+   function gameOver() {
+     // Populate score
+     document.getElementById('modal-score').textContent = 'Score: ' + correctCodes;
   
-//     // Populate attempts
-//     document.getElementById('modal-attempts').textContent = 'Attempts: ' + attempts;
+     // Populate attempts
+     document.getElementById('modal-attempts').textContent = 'Attempts: ' + attempts;
   
-//     // Populate snapshots
-//     let modalSnapshotsContainer = document.getElementById('modal-snapshots');
-//     let snapshotsContainer = document.getElementById('snapshots-container');
+     // Populate snapshots
+     let modalSnapshotsContainer = document.getElementById('modal-snapshots');
+     let snapshotsContainer = document.getElementById('snapshots-container');
   
-//     // Clone the snapshots
-//     modalSnapshotsContainer.innerHTML = snapshotsContainer.innerHTML;
+     // Clone the snapshots
+     modalSnapshotsContainer.innerHTML = snapshotsContainer.innerHTML;
   
-//     // Show the modal
-//     showModal();
-//   }
+     // Show the modal
+     showModal();
+   }
   
 
   
