@@ -172,7 +172,7 @@ function deleteLastInput() {
 function confettiRain() {
     const duration = 5 * 1000;
     const animationEnd = Date.now() + duration;
-    const defaults = { startVelocity: 30, spread: 360, ticks: 60, zIndex: 0 };
+    const defaults = { startVelocity: 15, spread: 360, ticks: 30, zIndex: 0 };
 
     function randomInRange(min, max) {
         return Math.random() * (max - min) + min;

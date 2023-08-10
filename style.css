@@ -10,6 +10,14 @@ h1, h3, p {
     color: white;
 }
 
+#instructions-section {
+    background-color: #3a3a3c; /* Background color */
+    padding: 20px; /* Padding around the content */
+    border-radius: 10px; /* Rounded corners */
+    width: 80%; /* Width */
+    margin: 20px auto; /* Centering */
+}
+
 .feedback-row,
 #input-area {
     display: flex;
@@ -95,6 +103,7 @@ h1, h3, p {
     justify-content: center;
     margin-left: 10px; /* Space between the keyboard and the buttons */
     margin-bottom: 5px; /* Space between the buttons */
+    border-radius: 15%;
 }
 
 #instructionsButton {
